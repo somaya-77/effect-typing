@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{font-family: cursive; margin: 0;padding: 0;box-sizing: border-box; font-size: 19px;}
+        body{background: #000; color: #fff;display: flex;justify-content: center;align-items: center;height: 100vh;}
+        span{
+            margin-left: 5px;color: crimson;position: relative;overflow: hidden;
+        }
+        span::after{
+            content: '';
+            position: absolute;
+            top: 0;left: 0;
+            height: 100%; width: 100%;
+            border-left: 2px solid crimson;
+            background: #000;
+            animation: light 4s steps(15) infinite;
+        }
+        @keyframes light{
+            40%, 60%{
+                left: 100%;
+            }
+            100%{
+                left: 0%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>I'm a:<span></span></h1>
+
+    <script>
+        let text = document.querySelector("span");
+
+        function textArray(){
+            setTimeout(()=>{
+                text.innerHTML = "Somaya Adel Elkhateeb";
+            },0);
+            setTimeout(()=>{
+                text.innerHTML = "Front end Developer";
+            },4000);
+            setTimeout(()=>{
+                text.innerHTML = "Freelancer";
+            },8000);
+        }
+        textArray()
+        setInterval(textArray,12000)
+    </script>
+</body>
+</html>
